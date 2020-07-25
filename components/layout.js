@@ -10,19 +10,19 @@ ${tw`
 `}
 `
 const Title = styled.a`
-${tw`bg-black font-black text-2xl mx-2 my-2 flex items-center px-4 rounded-lg cursor-pointer bg-opacity-25 border-4 shadow-2xl border-yellow-700`}
+${tw`bg-black font-semibold sm:text-2xl sm:mx-2 sm:my-2 flex items-center sm:px-4 rounded-lg cursor-pointer bg-opacity-50  shadow-2xl `}
 `
 const A = styled.a`
 ${tw`capitalize text-lg font-thin mx-8 my-2 flex items-center cursor-pointer  border-yellow-600 border-2 py-1 px-2 self-center rounded`}
 `
 const Container = styled.div`
-    ${tw`w-full min-h-screen h-full `}
+    ${tw`w-full min-h-screen h-full bg-black`}
 `
 
 const Layout = (props) => (
     <Container>
         <Header>
-            <Link href="/"><Title>UA HIGH</Title></Link>
+            <Link href="/"><Title>UA Records</Title></Link>
             <Link href="/"><A>Go To Teachers</A></Link>
         </Header>
         <div>
