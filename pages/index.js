@@ -1,14 +1,18 @@
 import styled from 'styled-components'
 import { Head } from 'next/document'
 import tw from 'twin.macro'
+import Layout from '../components/layout'
  
 const Heading = styled.h1`
-${tw `bg-red-700 text-white`}
+${tw `text-white`}
 `
 
 export default function Home() {
   return (
-    <Heading>hi</Heading>
+    <Layout>
+      <Heading>hi</Heading>
+    </Layout>
+    
   )
 }
 
