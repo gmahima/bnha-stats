@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { Head } from 'next/document'
-
+import tw from 'twin.macro'
  
 const Heading = styled.h1`
- color: red;
+${tw `bg-red-700 text-white`}
 `
 
 export default function Home() {
