@@ -1,6 +1,14 @@
+import styled from 'styled-components'
+import { Head } from 'next/document'
+
+ 
+const Heading = styled.h1`
+ color: red;
+`
+
 export default function Home() {
   return (
-    <div>hi</div>
+    <Heading>hi</Heading>
   )
 }
 
