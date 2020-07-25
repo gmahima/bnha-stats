@@ -1,227 +1,47 @@
 import styled from 'styled-components'
-import { Head } from 'next/document'
 import tw from 'twin.macro'
-import Layout from '../components/layout'
- 
-const Heading = styled.h1`
-${tw `text-white`}
+import Link from 'next/link'
+const Content = styled.div`
+  ${tw`bg-black px-16 flex flex-col justify-center items-center bg-opacity-75 shadow-2xl border-yellow-700 w-full h-screen `}
+  p {
+    ${tw`text-sm sm:text-xl text-yellow-700`}
+  }
 `
+const Links = styled.div`${tw`mt-16 flex flex-col sm:flex-row`}`
+const A = styled.a`
+${tw`text-orange-400 cursor-pointer mx-4 my-1 rounded-lg py-2 px-4 sm:py-4 sm:px-8 border border-yellow-700 hover:bg-yellow-700 hover:shadow-inner`}
+`
+
+const Heading = styled.h1`
+${tw `font-semibold text-2xl mb-4 sm:text-4xl sm:font-bold sm:mb-8`}
+`
+const Container = styled.div `
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='58' viewBox='0 0 42 58'%3E%3Cg fill='%2367665d' fill-opacity='0.10'%3E%3Cpath fill-rule='evenodd' d='M12 18h12v18h6v4H18V22h-6v-4zm-6-2v-4H0V0h36v6h6v36h-6v4h6v12H6v-6H0V16h6zM34 2H2v8h24v24h8V2zM6 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm8 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm8 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm8 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM2 50h32v-8H10V18H2v32zm28-6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-8a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-8a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-8a2 2 0 1 0 0 4 2 2 0 0 0 0-4z'/%3E%3C/g%3E%3C/svg%3E")
+,linear-gradient(110deg, orange, brown);
+${tw`
+ text-yellow-300  min-h-screen h-full flex flex-col justify-center items-center 
+`}
+`
+// const Title = styled.a`
+// ${tw`bg-black font-black text-2xl mx-2 my-2 flex items-center px-4 rounded-lg cursor-pointer bg-opacity-25 border-4 shadow-2xl border-yellow-700`}
+// `
+// const A = styled.a`
+// ${tw`capitalize text-lg font-thin mx-8 my-2 flex items-center cursor-pointer  border-yellow-600 border-2 py-1 px-2 self-center rounded`}
+// `
+
 
 export default function Home() {
   return (
-    <Layout>
-      <Heading>hi</Heading>
-    </Layout>
+    <Container>
+      <Content>
+      <Heading>UA Records: Class 1-A </Heading>
+      <p>We here at UA train our students to become the best superheroes and save the world</p>
+      <Links><Link href="/teachers"><A>Check out Teacher Stats</A></Link><Link href="/students"><A>Check out Student stats</A></Link></Links>
+      </Content>
+      
+    </Container>
+    
+    
     
   )
 }
-
-// import Head from 'next/head'
-
-// export default function Home() {
-//   return (
-//     <div className="container">
-//       <Head>
-//         <title>Create Next App</title>
-//         <link rel="icon" href="/favicon.ico" />
-//       </Head>
-
-//       <main>
-//         <h1 className="title">
-//           Welcome to <a href="https://nextjs.org">Next.js!</a>
-//         </h1>
-
-//         <p className="description">
-//           Get started by editing <code>pages/index.js</code>
-//         </p>
-
-//         <div className="grid">
-//           <a href="https://nextjs.org/docs" className="card">
-//             <h3>Documentation &rarr;</h3>
-//             <p>Find in-depth information about Next.js features and API.</p>
-//           </a>
-
-//           <a href="https://nextjs.org/learn" className="card">
-//             <h3>Learn &rarr;</h3>
-//             <p>Learn about Next.js in an interactive course with quizzes!</p>
-//           </a>
-
-//           <a
-//             href="https://github.com/vercel/next.js/tree/master/examples"
-//             className="card"
-//           >
-//             <h3>Examples &rarr;</h3>
-//             <p>Discover and deploy boilerplate example Next.js projects.</p>
-//           </a>
-
-//           <a
-//             href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-//             className="card"
-//           >
-//             <h3>Deploy &rarr;</h3>
-//             <p>
-//               Instantly deploy your Next.js site to a public URL with Vercel.
-//             </p>
-//           </a>
-//         </div>
-//       </main>
-
-//       <footer>
-//         <a
-//           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Powered by{' '}
-//           <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-//         </a>
-//       </footer>
-
-//       <style jsx>{`
-//         .container {
-//           min-height: 100vh;
-//           padding: 0 0.5rem;
-//           display: flex;
-//           flex-direction: column;
-//           justify-content: center;
-//           align-items: center;
-//         }
-
-//         main {
-//           padding: 5rem 0;
-//           flex: 1;
-//           display: flex;
-//           flex-direction: column;
-//           justify-content: center;
-//           align-items: center;
-//         }
-
-//         footer {
-//           width: 100%;
-//           height: 100px;
-//           border-top: 1px solid #eaeaea;
-//           display: flex;
-//           justify-content: center;
-//           align-items: center;
-//         }
-
-//         footer img {
-//           margin-left: 0.5rem;
-//         }
-
-//         footer a {
-//           display: flex;
-//           justify-content: center;
-//           align-items: center;
-//         }
-
-//         a {
-//           color: inherit;
-//           text-decoration: none;
-//         }
-
-//         .title a {
-//           color: #0070f3;
-//           text-decoration: none;
-//         }
-
-//         .title a:hover,
-//         .title a:focus,
-//         .title a:active {
-//           text-decoration: underline;
-//         }
-
-//         .title {
-//           margin: 0;
-//           line-height: 1.15;
-//           font-size: 4rem;
-//         }
-
-//         .title,
-//         .description {
-//           text-align: center;
-//         }
-
-//         .description {
-//           line-height: 1.5;
-//           font-size: 1.5rem;
-//         }
-
-//         code {
-//           background: #fafafa;
-//           border-radius: 5px;
-//           padding: 0.75rem;
-//           font-size: 1.1rem;
-//           font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-//             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-//         }
-
-//         .grid {
-//           display: flex;
-//           align-items: center;
-//           justify-content: center;
-//           flex-wrap: wrap;
-
-//           max-width: 800px;
-//           margin-top: 3rem;
-//         }
-
-//         .card {
-//           margin: 1rem;
-//           flex-basis: 45%;
-//           padding: 1.5rem;
-//           text-align: left;
-//           color: inherit;
-//           text-decoration: none;
-//           border: 1px solid #eaeaea;
-//           border-radius: 10px;
-//           transition: color 0.15s ease, border-color 0.15s ease;
-//         }
-
-//         .card:hover,
-//         .card:focus,
-//         .card:active {
-//           color: #0070f3;
-//           border-color: #0070f3;
-//         }
-
-//         .card h3 {
-//           margin: 0 0 1rem 0;
-//           font-size: 1.5rem;
-//         }
-
-//         .card p {
-//           margin: 0;
-//           font-size: 1.25rem;
-//           line-height: 1.5;
-//         }
-
-//         .logo {
-//           height: 1em;
-//         }
-
-//         @media (max-width: 600px) {
-//           .grid {
-//             width: 100%;
-//             flex-direction: column;
-//           }
-//         }
-//       `}</style>
-
-//       <style jsx global>{`
-//         html,
-//         body {
-//           padding: 0;
-//           margin: 0;
-//           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-//             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-//             sans-serif;
-//         }
-
-//         * {
-//           box-sizing: border-box;
-//         }
-//       `}</style>
-//     </div>
-//   )
-// }
