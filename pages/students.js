@@ -3,33 +3,33 @@ import { Head } from 'next/document'
 import tw from 'twin.macro'
 import Layout from '../components/layout'
 import {
-  AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Label, RadialBarChart, RadialBar, Legend
+  AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Label, RadialBarChart, RadialBar, Legend, ResponsiveContainer
 } from 'recharts';
 
 
 const data = [
   {
-    name: '120-130', number: 2
+    name: '120-130', number: 2, fill:'#7b341e'
   },
   {
-    name: '130-140', number: 5
+    name: '130-140', number: 5, fill:'#9c4221'
   },
   {
-    name: '140-150', number: 3
+    name: '140-150', number: 3, fill:'#c05621'
   },
   {
-    name: '150-160', number: 2
+    name: '150-160', number: 2, fill:'#dd6b20'
   },
   {
-    name: '160-170', number: 1
+    name: '160-170', number: 1, fill:'#ed8936'
   },
   {
-    name: '170-180', number: 1
+    name: '170-180', number: 1, fill:'#f6ad55'
   }
 ];
 
 const Heading = styled.h1`
- ${tw `text-black text-6xl font-semibold`}
+ ${tw `text-black text-xl sm:text-6xl font-semibold`}
 `
 const Content = styled.div`
  ${tw`border border-red-700 flex flex-col`}
@@ -38,13 +38,19 @@ const StyledArea = styled(AreaChart).attrs(() => ({height: 400, width:600})) `
  ${tw`border self-center m-4 w-1/2 flex justify-center items-center p-12`}
 `
 const SRadialBarChart = styled(RadialBarChart)`${tw `border`}`
+const ChartWrapper = styled.div`${tw `border border-2 border-orange-700 shadow-2xl rounded-lg  flex flex-col m-2 sm:m-4`}`
 const CustomizedLabel = ({children}) => (
   <text fontSize={10} textAnchor="middle">{children}</text>
 )
+const ChartHeading = styled.h1`${tw`font-semibold text-lg text-center p-4 bg-orange-700 text-white`}`
 const style = {
-  top: 0,
-  left: 350,
-  lineHeight: '24px',
+  top: 10,
+  right: 5,
+  lineHeight: '15px',
+  fontSize: '12px',
+  background: '#eee',
+  padding: 5
+
 };
 
 export default function Home() {
@@ -52,10 +58,16 @@ export default function Home() {
     <Layout navTo="teachers">
       <Content>
         <Heading>student-stats</Heading>
-        <SRadialBarChart width={500} height={300} cx={150} cy={150} innerRadius={20} outerRadius={150} barSize={30} data={data}>
-          <RadialBar minAngle={15} label={{ position: 'end', fill: '#999' }} background clockWise dataKey="number" />
-          <Legend iconSize={10} width={120} height={140} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
-        </SRadialBarChart>
+        <ChartWrapper>
+          <ResponsiveContainer  width="100%" height={300}>
+            <SRadialBarChart width={500} height={300} innerRadius={20} outerRadius={150} barSize={10} data={data}>
+              <RadialBar label={{ position: 'end', fill: '#000' }} background clockWise dataKey="number" />
+              <Legend iconSize={6} width={80} height={100} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
+            </SRadialBarChart>
+          </ResponsiveContainer> 
+          <ChartHeading>Student Heights</ChartHeading>
+        </ChartWrapper>
+        
         {/* <StyledArea
 
           data={data}
