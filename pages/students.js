@@ -2,19 +2,76 @@ import styled from 'styled-components'
 import { Head } from 'next/document'
 import tw from 'twin.macro'
 import Layout from '../components/layout'
- 
+import {
+  AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Label
+} from 'recharts';
+
+
+const data = [
+  {
+    name: '130', number: 2
+  },
+  {
+    name: '140', number: 10
+  },
+  {
+    name: '150', number: 10
+  },
+  {
+    name: '160', number: 6
+  },
+  {
+    name: '170', number: 5
+  },
+  {
+    name: '180', number: 1
+  }
+];
+
 const Heading = styled.h1`
-${tw `text-white`}
+ ${tw `text-black text-6xl font-semibold`}
 `
+const Content = styled.div`
+ ${tw`border border-red-700 flex flex-col`}
+`
+const StyledArea = styled(AreaChart).attrs(() => ({height: 400, width:600})) `
+ ${tw`border self-center m-4 w-1/2 flex justify-center items-center p-12`}
+`
+const Span = styled.span `
+
+`
+const CustomizedLabel = ({children}) => (
+  <text fontSize={10} textAnchor="middle">{children}</text>
+)
 
 export default function Home() {
   return (
     <Layout navTo="teachers">
+      <Content>
+        <Heading>student-stats</Heading>
+        <StyledArea
+
+          data={data}
+          margin={{
+            top: 10, right: 30, left: 0, bottom: 0
+          }}
+        >
+          <CartesianGrid vertical={false} />
+          <XAxis dataKey="name" type="number" tickCount={6} domain={[130,180]} interval={0}>
+            <Label value="Height in cm" position="bottom" offset={0}/>
+          </XAxis>
+          <YAxis label={{ value: 'Number of students', angle: -90, position: 'insideLeft'}}>
+          </YAxis>
+          <Tooltip/>
+          <Area type="monotone" dataKey="number" stroke="#d69e2e" fill="#f6e05e" isAnimationActive />
+        </StyledArea>
+      </Content>
       
     </Layout>
     
   )
 }
+
 
 // import Head from 'next/head'
 

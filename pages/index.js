@@ -3,14 +3,14 @@ import tw from 'twin.macro'
 import Link from 'next/link'
 import Head from 'next/head'
 const Content = styled.div`
-  ${tw`bg-black px-16 flex flex-col justify-center items-center bg-opacity-75 shadow-2xl border-yellow-700 w-full h-screen `}
+  ${tw` px-16 flex flex-col justify-center items-center bg-opacity-75 shadow-2xl border-yellow-700 w-full h-screen `}
   p {
-    ${tw`text-sm sm:text-xl text-yellow-700`}
+    ${tw`text-sm sm:text-xl text-orange-200`}
   }
 `
 const Links = styled.div`${tw`mt-16 flex flex-col sm:flex-row`}`
 const A = styled.a`
-${tw`text-orange-400 cursor-pointer mx-4 my-1 rounded-lg py-2 px-4 sm:py-4 sm:px-8 border border-yellow-700 hover:bg-yellow-700 hover:shadow-inner`}
+${tw`text-yellow-200 bg-yellow-400 hover:shadow-sm shadow-lg bg-opacity-25 cursor-pointer mx-4 my-1 rounded-lg py-2 px-4 sm:py-4 sm:px-8 `}
 `
 
 const Heading = styled.h1`

@@ -10,13 +10,16 @@ ${tw`
 `}
 `
 const Title = styled.a`
-${tw`bg-black font-semibold sm:text-xl  flex items-center sm:px-4 rounded-r cursor-pointer bg-opacity-50  shadow-2xl `}
+${tw`font-semibold sm:text-xl  flex items-center sm:px-4 rounded-r cursor-pointer sm:mx-16`}
 `
 const A = styled.a`
-${tw`capitalize text-sm font-thin flex items-center cursor-pointer  border-yellow-600 border-2 py-2 px-2 self-center rounded`}
+${tw`capitalize text-sm font-thin flex items-center cursor-pointer  border-yellow-600 border-l-2 py-2 px-2 self-center rounded hover:bg-yellow-700`}
 `
 const Container = styled.div`
-    ${tw`w-full min-h-screen h-full bg-black`}
+    ${tw`w-full min-h-screen h-full bg-white flex flex-col`}
+`
+const Div = styled.div`
+    ${tw`mt-16 border mx-8 text-left`}
 `
 
 const Layout = (props) => (
@@ -28,9 +31,11 @@ const Layout = (props) => (
             <Link href={`/`}><Title>UA Records</Title></Link>
             <Link href={`/${props.navTo}`}><A>{`Go To ${props.navTo}`}</A></Link>
         </Header>
-        <div>
+        
+
+        <Div>
             {props.children}
-        </div>
+        </Div>
     </Container>
     
 )
