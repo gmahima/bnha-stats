@@ -9,7 +9,7 @@ ${tw `text-white`}
 
 export default function Home() {
   return (
-    <Layout navTo="teachers">
+    <Layout navTo="students">
       
     </Layout>
     
