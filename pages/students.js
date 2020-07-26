@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Head } from 'next/document'
 import tw from 'twin.macro'
 import Layout from '../components/layout'
+import students from '../data/students'
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Label, RadialBarChart, RadialBar, Legend, ResponsiveContainer
 } from 'recharts';
@@ -9,27 +10,44 @@ import {
 
 const data = [
   {
-    name: '120-130', number: 2, fill:'#7b341e'
+    name: '< 140', number: 0, fill:'#7b341e'
   },
   {
-    name: '130-140', number: 5, fill:'#9c4221'
+    name: '140-150', number: 0, fill:'#c05621'
   },
   {
-    name: '140-150', number: 3, fill:'#c05621'
+    name: '150-160', number: 0, fill:'#dd6b20'
   },
   {
-    name: '150-160', number: 2, fill:'#dd6b20'
+    name: '160-170', number: 0, fill:'#ed8936'
   },
   {
-    name: '160-170', number: 1, fill:'#ed8936'
-  },
-  {
-    name: '170-180', number: 1, fill:'#f6ad55'
+    name: '170-180', number: 0, fill:'#f6ad55'
   }
 ];
 
+students.forEach(s => {
+  console.log(s.height)
+  const h = s.height;
+  if(h<140) {
+    data[0].number++
+  }
+  else if (h<=150) {
+    data[1].number++
+  }
+  else if (h<=160) {
+    data[2].number++
+  }
+  else if (h<=170) {
+    data[3].number++
+  }
+  else {
+    data[4].number++
+  }
+})
+
 const Heading = styled.h1`
- ${tw `text-black text-xl sm:text-6xl font-semibold`}
+ ${tw `text-black text-4xl sm:text-6xl font-semibold sm:mb-16`}
 `
 const Content = styled.div`
  ${tw`border border-red-700 flex flex-col p-0`}
