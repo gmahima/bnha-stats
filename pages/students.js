@@ -38,7 +38,7 @@ const StyledArea = styled(AreaChart).attrs(() => ({height: 400, width:600})) `
  ${tw`border self-center m-4 w-1/2 flex justify-center items-center p-12`}
 `
 const SRadialBarChart = styled(RadialBarChart)`${tw `border`}`
-const ChartWrapper = styled.div`${tw `border border-2 border-orange-700 shadow-2xl rounded-lg  flex flex-col my-2 sm:m-4 sm:w-1/3`}`
+const ChartWrapper = styled.div`${tw `border border-2 border-orange-700 shadow-2xl rounded-lg  flex flex-col my-2 sm:m-4 sm:w-1/3 sm:self-center`}`
 const CustomizedLabel = ({children}) => (
   <text fontSize={10} textAnchor="middle">{children}</text>
 )
