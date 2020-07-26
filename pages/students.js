@@ -32,13 +32,13 @@ const Heading = styled.h1`
  ${tw `text-black text-xl sm:text-6xl font-semibold`}
 `
 const Content = styled.div`
- ${tw`border border-red-700 flex flex-col`}
+ ${tw`border border-red-700 flex flex-col p-0`}
 `
 const StyledArea = styled(AreaChart).attrs(() => ({height: 400, width:600})) `
  ${tw`border self-center m-4 w-1/2 flex justify-center items-center p-12`}
 `
 const SRadialBarChart = styled(RadialBarChart)`${tw `border`}`
-const ChartWrapper = styled.div`${tw `border border-2 border-orange-700 shadow-2xl rounded-lg  flex flex-col m-2 sm:m-4`}`
+const ChartWrapper = styled.div`${tw `border border-2 border-orange-700 shadow-2xl rounded-lg  flex flex-col my-2 sm:m-4`}`
 const CustomizedLabel = ({children}) => (
   <text fontSize={10} textAnchor="middle">{children}</text>
 )
@@ -59,7 +59,7 @@ export default function Home() {
       <Content>
         <Heading>student-stats</Heading>
         <ChartWrapper>
-          <ResponsiveContainer  width="100%" height={300}>
+          <ResponsiveContainer  width="100%" height={300} wrapperStyle={{left:2, right:2}}>
             <SRadialBarChart width={500} height={300} innerRadius={20} outerRadius={150} barSize={10} data={data}>
               <RadialBar label={{ position: 'end', fill: '#000' }} background clockWise dataKey="number" />
               <Legend iconSize={6} width={80} height={100} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
