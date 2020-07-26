@@ -3,28 +3,28 @@ import { Head } from 'next/document'
 import tw from 'twin.macro'
 import Layout from '../components/layout'
 import {
-  AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Label
+  AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Label, RadialBarChart, RadialBar, Legend
 } from 'recharts';
 
 
 const data = [
   {
-    name: '130', number: 2
+    name: '120-130', number: 2
   },
   {
-    name: '140', number: 10
+    name: '130-140', number: 5
   },
   {
-    name: '150', number: 10
+    name: '140-150', number: 3
   },
   {
-    name: '160', number: 6
+    name: '150-160', number: 2
   },
   {
-    name: '170', number: 5
+    name: '160-170', number: 1
   },
   {
-    name: '180', number: 1
+    name: '170-180', number: 1
   }
 ];
 
@@ -37,19 +37,26 @@ const Content = styled.div`
 const StyledArea = styled(AreaChart).attrs(() => ({height: 400, width:600})) `
  ${tw`border self-center m-4 w-1/2 flex justify-center items-center p-12`}
 `
-const Span = styled.span `
-
-`
+const SRadialBarChart = styled(RadialBarChart)`${tw `border`}`
 const CustomizedLabel = ({children}) => (
   <text fontSize={10} textAnchor="middle">{children}</text>
 )
+const style = {
+  top: 0,
+  left: 350,
+  lineHeight: '24px',
+};
 
 export default function Home() {
   return (
     <Layout navTo="teachers">
       <Content>
         <Heading>student-stats</Heading>
-        <StyledArea
+        <SRadialBarChart width={500} height={300} cx={150} cy={150} innerRadius={20} outerRadius={150} barSize={30} data={data}>
+          <RadialBar minAngle={15} label={{ position: 'end', fill: '#999' }} background clockWise dataKey="number" />
+          <Legend iconSize={10} width={120} height={140} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
+        </SRadialBarChart>
+        {/* <StyledArea
 
           data={data}
           margin={{
@@ -64,7 +71,9 @@ export default function Home() {
           </YAxis>
           <Tooltip/>
           <Area type="monotone" dataKey="number" stroke="#d69e2e" fill="#f6e05e" isAnimationActive />
-        </StyledArea>
+        </StyledArea> */}
+
+
       </Content>
       
     </Layout>
