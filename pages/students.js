@@ -168,10 +168,10 @@ export default function Home() {
           <RadarChart width={500} height={300} data={champions.stats} outerRadius={120}>
           <PolarGrid stroke="#b7791f"/>
           <PolarAngleAxis dataKey="field" tick={{fontSize: '10px', fontWeight: 'bold'}} />
-          <Radar name="#3 Tokoyami Fumikage" dataKey="third" stroke="#ecc94b" fill="#ecc94b" fillOpacity={0.6}/>
-          <Radar name="#2 Todoroki Shouto" dataKey="second" stroke="#d69e2e" fill="#d69e2e" fillOpacity={0.6}/>
-          <Radar name="#1 Bakugo Katsuki" dataKey="first" stroke="#744210" fill="#744210" fillOpacity={0.6}/>
-          <Legend wrapperStyle={{fontSize: '12px', fontWeight:'bold', padding: 5}} />
+          <Radar name={'#3 '+championNames[2]} dataKey="third" stroke="#ecc94b" fill="#ecc94b" fillOpacity={0.6}/>
+          <Radar name={"#2 "+championNames[1]} dataKey="second" stroke="#d69e2e" fill="#d69e2e" fillOpacity={0.6}/>
+          <Radar name={"#1 "+championNames[0]} dataKey="first" stroke="#744210" fill="#744210" fillOpacity={0.6}/>
+          <Legend wrapperStyle={{fontSize: '12px', fontWeight:'bold', padding: 5}}/>
           <Tooltip wrapperStyle={{fontSize: '3px', fontWeight: 'bold',height:20, opacity:0.9}}/>
           
         </RadarChart>
