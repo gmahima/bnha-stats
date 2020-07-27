@@ -163,7 +163,7 @@ export default function Home() {
         <ChartWrapper champions>
           <ResponsiveContainer  width="100%" height={400} wrapperStyle={{left:2, right:2}}>
           <RadarChart width={500} height={300} data={champions.stats} outerRadius={120}>
-          <PolarGrid stroke="#b7791f"/>
+          <PolarGrid stroke="#ecc94b"/>
           <PolarAngleAxis dataKey="field" tick={{fontSize: '10px', fontWeight: 'bold'}} />
           <Radar name={'#3 '+championNames[2]} dataKey="third" stroke="#ecc94b" fill="#ecc94b" fillOpacity={0.6}/>
           <Radar name={"#2 "+championNames[1]} dataKey="second" stroke="#d69e2e" fill="#d69e2e" fillOpacity={0.6}/>
