@@ -1,11 +1,11 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import { Head } from 'next/document'
 import tw from 'twin.macro'
 import Layout from '../components/layout'
 import {students, champions} from '../data/students'
 import {
   RadialBarChart, RadialBar, Legend, Tooltip, ResponsiveContainer,
-  Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis
+  Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Label
 } from 'recharts';
 
 
@@ -58,18 +58,13 @@ const Content = styled.div`
 const ChartWrapper = styled.div`${tw `border border-2 border-orange-700 shadow-2xl rounded-lg  flex flex-col my-2 sm:m-4 sm:w-1/3 sm:self-center`}
 ${props => {
   if(props.champions) {
-    return tw`border-yellow-400 border-4`
+    return tw`bg-yellow-100`
   }
 }}
 
 `
 
 const ChartHeading = styled.h1`${tw`font-semibold text-lg text-center p-4 bg-orange-700 text-white`}
-${props => {
-  if(props.champions) {
-    return tw`bg-yellow-400 text-orange-700`
-  }
-}}
 
 `
 const style = {
@@ -99,11 +94,11 @@ export default function Home() {
         <ChartWrapper champions>
           <ResponsiveContainer  width="100%" height={300} wrapperStyle={{left:2, right:2}}>
           <RadarChart width={500} height={300} data={champions.stats} outerRadius={100}>
-          <PolarGrid />
-          <PolarAngleAxis dataKey="field" />
-          <Radar name="#3 Tokoyami Fumikage" dataKey="third" stroke="blue" fill="blue" fillOpacity={0.6}/>
-          <Radar name="#2 Todoroki Shouto" dataKey="second" stroke="red" fill="red" fillOpacity={0.6}/>
-          <Radar name="#1 Bakugo Katsuki" dataKey="first" stroke="green" fill="green" fillOpacity={0.6}/>
+          <PolarGrid stroke="pink"/>
+          <PolarAngleAxis dataKey="field" tick={{fontSize: '10px'}} stroke="pink"/>
+          <Radar name="#3 Tokoyami Fumikage" dataKey="third" stroke="#ecc94b" fill="#ecc94b" fillOpacity={0.6}/>
+          <Radar name="#2 Todoroki Shouto" dataKey="second" stroke="#d69e2e" fill="#d69e2e" fillOpacity={0.6}/>
+          <Radar name="#1 Bakugo Katsuki" dataKey="first" stroke="#744210" fill="#744210" fillOpacity={0.6}/>
           <Legend wrapperStyle={{fontSize: '12px', fontWeight:'bold'}}/>
           <Tooltip />
           
