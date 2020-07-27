@@ -162,12 +162,12 @@ const students = [
 ]
 
 const champions = {ids: [17, 15, 14], stats:[
-    {field: 'speed', first: 8, second: 7, third:4 },
-    {field: 'technique', first: 10, second: 8, third:7 },
-    {field: 'reasoning', first: 6, second: 8, third:5 },
+    {field: 'speed', first: 8, second: 7, third:6 },
+    {field: 'technique', first: 10, second: 8, third:6 },
+    {field: 'reasoning', first: 7, second: 8, third:7 },
     {field: 'attack', first: 10, second: 9, third: 7},
-    {field: 'defense', first: 6, second: 8, third: 9},
-    {field: 'cooperation', first: 1, second: 5, third: 7}
+    {field: 'defense', first: 6, second: 9, third: 6},
+    {field: 'cooperation', first: 1, second: 5, third: 8}
 
 ]}
 export {students, champions}

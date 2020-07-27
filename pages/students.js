@@ -138,54 +138,9 @@ students.forEach(s => {
     attackData[4].number++
   }
 })
-// const HR = styled.hr`
-// ${tw `my-8`}
-// `
-// const Heading = styled.h1`
-//  ${tw `text-yellow-700 text-3xl sm:text-6xl font-semibold sm:mb-16 border-b-2 mx-2 border-yellow-700`}
-// `
-// const Content = styled.div`
-//  ${tw` flex flex-col p-0`}
-// `
-// const Stats = styled.div`
-// ${tw ` flex flex-col sm:flex-row flex-wrap justify-center`}
-// `
-
-// const ChartWrapper = styled.div`${tw `border border-2 border-orange-700 shadow-lg rounded-lg  flex flex-col my-2 sm:m-4 w-full sm:w-1/3 sm:self-center`}
-// ${props => {
-//   if(props.champions) {
-//     return tw`shadow-2xl sm:w-2/3 sm:ml-16`
-//   }
-// }}
 
 
-// `
-// const ChampionDiv = styled.div`${tw`flex flex-col sm:flex-row justify-center `}`
-// const ChampionDesc = styled.div`${tw`bg-yellow-400 self-center m-8 rounded-lg p-4 shadow-2xl border text-yellow-600`}
-// h1 {
-//   ${tw `text-yellow-700 text-3xl font-bold `}
-// }
-// h2 {
-//   ${tw `text-yellow-700 font-semibold text-lg`}
-// }
-// p {
-//   ${tw `text-sm`}
-// }
-// div {
-//   ${tw `mb-4 flex flex-wrap`}
-// }
-// span {
-//   ${tw `rounded bg-yellow-700 text-yellow-200 p-1 mr-2 shadow-sm text-xs` }
-// }
-// `
 
-// const ChartHeading = styled.h1`${tw`font-semibold text-lg text-center p-4 bg-orange-700 text-white`}
-// ${props => {
-//   if(props.champions) {
-//     return `background-image: linear-gradient(to bottom right, orange, yellow); color:black`
-//   }
-// }}
-// `
 const style = {
   top: 10,
   right: 5,
