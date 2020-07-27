@@ -161,9 +161,13 @@ const students = [
     },
 ]
 
-const champions = [
-    {id: 17, speed: 8, technique: 10,reasoning: 6, attack: 10, defense: 6, cooperation: 1},
-    {id: 15, speed: 7, technique: 8, reasoning: 8, attack: 9, defense: 8, cooperation: 5},
-    {id: 14, speed: 4, technique: 7, reasoning: 5, attack: 7, defense: 9, cooperation: 7}
-]
-export default students
+const champions = {ids: [17, 15, 14], stats:[
+    {field: 'speed', first: 8, second: 7, third:4 },
+    {field: 'technique', first: 10, second: 8, third:7 },
+    {field: 'reasoning', first: 6, second: 8, third:5 },
+    {field: 'attack', first: 10, second: 9, third: 7},
+    {field: 'defense', first: 6, second: 8, third: 9},
+    {field: 'cooperation', first: 1, second: 5, third: 7}
+
+]}
+export {students, champions}

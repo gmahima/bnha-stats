@@ -2,9 +2,10 @@ import styled from 'styled-components'
 import { Head } from 'next/document'
 import tw from 'twin.macro'
 import Layout from '../components/layout'
-import students from '../data/students'
+import {students, champions} from '../data/students'
 import {
-  AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Label, RadialBarChart, RadialBar, Legend, ResponsiveContainer
+  RadialBarChart, RadialBar, Legend, Tooltip, ResponsiveContainer,
+  Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis
 } from 'recharts';
 
 
@@ -52,10 +53,8 @@ const Heading = styled.h1`
 const Content = styled.div`
  ${tw`border border-red-700 flex flex-col p-0`}
 `
-const StyledArea = styled(AreaChart).attrs(() => ({height: 400, width:600})) `
- ${tw`border self-center m-4 w-1/2 flex justify-center items-center p-12`}
-`
-const SRadialBarChart = styled(RadialBarChart)`${tw `border`}`
+
+
 const ChartWrapper = styled.div`${tw `border border-2 border-orange-700 shadow-2xl rounded-lg  flex flex-col my-2 sm:m-4 sm:w-1/3 sm:self-center`}`
 const CustomizedLabel = ({children}) => (
   <text fontSize={10} textAnchor="middle">{children}</text>
@@ -78,30 +77,30 @@ export default function Home() {
         <Heading>student-stats</Heading>
         <ChartWrapper>
           <ResponsiveContainer  width="100%" height={300} wrapperStyle={{left:2, right:2}}>
-            <SRadialBarChart width={500} height={300} innerRadius={20} outerRadius={150} barSize={10} data={data}>
+            <RadialBarChart width={500} height={300} innerRadius={20} outerRadius={150} barSize={10} data={data}>
               <RadialBar label={{ position: 'end', fill: '#000' }} background clockWise dataKey="number" />
               <Legend iconSize={6} width={80} height={100} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
-            </SRadialBarChart>
+            </RadialBarChart>
+          </ResponsiveContainer> 
+          <ChartHeading>Student Heights in cm</ChartHeading>
+        </ChartWrapper>
+        <ChartWrapper>
+          <ResponsiveContainer  width="100%" height={300} wrapperStyle={{left:2, right:2}}>
+          <RadarChart width={500} height={300} data={champions.stats} outerRadius={150}>
+          <PolarGrid />
+          <PolarAngleAxis dataKey="field" />
+          <PolarRadiusAxis/>
+          <Radar name="#3 Tokoyami Fumikage" dataKey="third" stroke="blue" fill="blue" fillOpacity={0.6}/>
+          <Radar name="#2 Todoroki Shouto" dataKey="second" stroke="red" fill="red" fillOpacity={0.6}/>
+          <Radar name="#1 Bakugo Katsuki" dataKey="first" stroke="green" fill="green" fillOpacity={0.6}/>
+          <Legend />
+          <Tooltip />
+          
+        </RadarChart>
           </ResponsiveContainer> 
           <ChartHeading>Student Heights in cm</ChartHeading>
         </ChartWrapper>
         
-        {/* <StyledArea
-
-          data={data}
-          margin={{
-            top: 10, right: 30, left: 0, bottom: 0
-          }}
-        >
-          <CartesianGrid vertical={false} />
-          <XAxis dataKey="name" type="number" tickCount={6} domain={[130,180]} interval={0}>
-            <Label value="Height in cm" position="bottom" offset={0}/>
-          </XAxis>
-          <YAxis label={{ value: 'Number of students', angle: -90, position: 'insideLeft'}}>
-          </YAxis>
-          <Tooltip/>
-          <Area type="monotone" dataKey="number" stroke="#d69e2e" fill="#f6e05e" isAnimationActive />
-        </StyledArea> */}
 
 
       </Content>
