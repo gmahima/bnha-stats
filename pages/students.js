@@ -56,9 +56,7 @@ const Content = styled.div`
 
 
 const ChartWrapper = styled.div`${tw `border border-2 border-orange-700 shadow-2xl rounded-lg  flex flex-col my-2 sm:m-4 sm:w-1/3 sm:self-center`}`
-const CustomizedLabel = ({children}) => (
-  <text fontSize={10} textAnchor="middle">{children}</text>
-)
+
 const ChartHeading = styled.h1`${tw`font-semibold text-lg text-center p-4 bg-orange-700 text-white`}`
 const style = {
   top: 10,
@@ -86,7 +84,7 @@ export default function Home() {
         </ChartWrapper>
         <ChartWrapper>
           <ResponsiveContainer  width="100%" height={300} wrapperStyle={{left:2, right:2}}>
-          <RadarChart width={500} height={300} data={champions.stats} outerRadius={150}>
+          <RadarChart width={500} height={300} data={champions.stats} outerRadius={100}>
           <PolarGrid />
           <PolarAngleAxis dataKey="field" />
           <PolarRadiusAxis/>
