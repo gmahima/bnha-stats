@@ -46,7 +46,7 @@ students.forEach(s => {
     heightData[4].number++
   }
 })
-// height data
+// blood data
 const bloodData = [
   {
     name: 'A', number: 0, fill:'#7b341e'
@@ -77,6 +77,43 @@ students.forEach(s => {
     bloodData[3].number++
   }
 })
+
+//attack data 
+const attackData = [
+  {
+    name: 'ranged', number: 0, fill:'#c05621'
+  },
+  {
+    name: 'melee', number: 0, fill:'#7b341e'
+  },
+  {
+    name: 'long-ranged', number: 0, fill:'#f6ad55'
+  },
+  {
+    name: 'medium-ranged', number: 0, fill:'#f6ad55'
+  },
+  {
+    name: 'support', number: 0, fill:'#dd6b20'
+  },
+];
+students.forEach(s => {
+  const a = s.style;
+  if(a.includes('ranged')) {
+    attackData[0].number++
+  }
+  if (a.includes('melee')) {
+    attackData[1].number++
+  }
+  if (a.includes('long-ranged')) {
+    attackData[2].number++
+  }
+  if (a.includes('medium-ranged')){
+    attackData[3].number++
+  }
+  if (a.includes('support')){
+    attackData[4].number++
+  }
+})
 const HR = styled.hr`
 ${tw `my-8`}
 `
@@ -96,6 +133,7 @@ ${props => {
     return tw`shadow-2xl sm:w-2/3 sm:ml-16`
   }
 }}
+
 
 `
 const ChampionDiv = styled.div`${tw`flex flex-col sm:flex-row justify-center `}`
@@ -192,15 +230,17 @@ export default function Home() {
           </ResponsiveContainer> 
           <ChartHeading>Student Blood Group</ChartHeading>
         </ChartWrapper>
-        <ChartWrapper>
-          
-          <ResponsiveContainer  width="100%" height={300} wrapperStyle={{left:2, right:2}}>
-            <BarChart width={500} height={300}  data={heightData}>
-              <Bar  dataKey="number" />
-              <XAxis/>
-              <YAxis/>
-            </BarChart>
 
+        <ChartWrapper >
+          <ResponsiveContainer  width="100%" height={300} >
+            <BarChart width={700} height={300} data={attackData} barCategoryGap='20%' margin={{ top: 30, right: 0, left: 0, bottom: 5 }}>
+              <Bar dataKey="number">
+                <LabelList dataKey="number" position="top"/>
+              </Bar>
+              <XAxis dataKey="name" interval={0} fontSize='12px'/>
+              <YAxis />
+            </BarChart>
+            
           </ResponsiveContainer> 
           <ChartHeading>Student Attack Styles</ChartHeading>
         </ChartWrapper>
@@ -212,213 +252,3 @@ export default function Home() {
   )
 }
 
-
-// import Head from 'next/head'
-
-// export default function Home() {
-//   return (
-//     <div className="container">
-//       <Head>
-//         <title>Create Next App</title>
-//         <link rel="icon" href="/favicon.ico" />
-//       </Head>
-
-//       <main>
-//         <h1 className="title">
-//           Welcome to <a href="https://nextjs.org">Next.js!</a>
-//         </h1>
-
-//         <p className="description">
-//           Get started by editing <code>pages/index.js</code>
-//         </p>
-
-//         <div className="grid">
-//           <a href="https://nextjs.org/docs" className="card">
-//             <h3>Documentation &rarr;</h3>
-//             <p>Find in-depth information about Next.js features and API.</p>
-//           </a>
-
-//           <a href="https://nextjs.org/learn" className="card">
-//             <h3>Learn &rarr;</h3>
-//             <p>Learn about Next.js in an interactive course with quizzes!</p>
-//           </a>
-
-//           <a
-//             href="https://github.com/vercel/next.js/tree/master/examples"
-//             className="card"
-//           >
-//             <h3>Examples &rarr;</h3>
-//             <p>Discover and deploy boilerplate example Next.js projects.</p>
-//           </a>
-
-//           <a
-//             href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-//             className="card"
-//           >
-//             <h3>Deploy &rarr;</h3>
-//             <p>
-//               Instantly deploy your Next.js site to a public URL with Vercel.
-//             </p>
-//           </a>
-//         </div>
-//       </main>
-
-//       <footer>
-//         <a
-//           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Powered by{' '}
-//           <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-//         </a>
-//       </footer>
-
-//       <style jsx>{`
-//         .container {
-//           min-height: 100vh;
-//           padding: 0 0.5rem;
-//           display: flex;
-//           flex-direction: column;
-//           justify-content: center;
-//           align-items: center;
-//         }
-
-//         main {
-//           padding: 5rem 0;
-//           flex: 1;
-//           display: flex;
-//           flex-direction: column;
-//           justify-content: center;
-//           align-items: center;
-//         }
-
-//         footer {
-//           width: 100%;
-//           height: 100px;
-//           border-top: 1px solid #eaeaea;
-//           display: flex;
-//           justify-content: center;
-//           align-items: center;
-//         }
-
-//         footer img {
-//           margin-left: 0.5rem;
-//         }
-
-//         footer a {
-//           display: flex;
-//           justify-content: center;
-//           align-items: center;
-//         }
-
-//         a {
-//           color: inherit;
-//           text-decoration: none;
-//         }
-
-//         .title a {
-//           color: #0070f3;
-//           text-decoration: none;
-//         }
-
-//         .title a:hover,
-//         .title a:focus,
-//         .title a:active {
-//           text-decoration: underline;
-//         }
-
-//         .title {
-//           margin: 0;
-//           line-height: 1.15;
-//           font-size: 4rem;
-//         }
-
-//         .title,
-//         .description {
-//           text-align: center;
-//         }
-
-//         .description {
-//           line-height: 1.5;
-//           font-size: 1.5rem;
-//         }
-
-//         code {
-//           background: #fafafa;
-//           border-radius: 5px;
-//           padding: 0.75rem;
-//           font-size: 1.1rem;
-//           font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-//             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-//         }
-
-//         .grid {
-//           display: flex;
-//           align-items: center;
-//           justify-content: center;
-//           flex-wrap: wrap;
-
-//           max-width: 800px;
-//           margin-top: 3rem;
-//         }
-
-//         .card {
-//           margin: 1rem;
-//           flex-basis: 45%;
-//           padding: 1.5rem;
-//           text-align: left;
-//           color: inherit;
-//           text-decoration: none;
-//           border: 1px solid #eaeaea;
-//           border-radius: 10px;
-//           transition: color 0.15s ease, border-color 0.15s ease;
-//         }
-
-//         .card:hover,
-//         .card:focus,
-//         .card:active {
-//           color: #0070f3;
-//           border-color: #0070f3;
-//         }
-
-//         .card h3 {
-//           margin: 0 0 1rem 0;
-//           font-size: 1.5rem;
-//         }
-
-//         .card p {
-//           margin: 0;
-//           font-size: 1.25rem;
-//           line-height: 1.5;
-//         }
-
-//         .logo {
-//           height: 1em;
-//         }
-
-//         @media (max-width: 600px) {
-//           .grid {
-//             width: 100%;
-//             flex-direction: column;
-//           }
-//         }
-//       `}</style>
-
-//       <style jsx global>{`
-//         html,
-//         body {
-//           padding: 0;
-//           margin: 0;
-//           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-//             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-//             sans-serif;
-//         }
-
-//         * {
-//           box-sizing: border-box;
-//         }
-//       `}</style>
-//     </div>
-//   )
-// }
