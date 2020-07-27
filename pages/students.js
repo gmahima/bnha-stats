@@ -202,12 +202,13 @@ export default function Home() {
         </ChartWrapper>
         <ChartWrapper>
           
-          <ResponsiveContainer  width="100%" height={300} >
-            <BarChart width={400} height={300}  data={bloodData} margin={{ top: 30, right: 45, left: 10, bottom: 5 }}  barSize={30}>
-              <Bar dataKey="number" ><LabelList dataKey="number" position="top"/></Bar>
-              <XAxis dataKey="name" tickLine={false} padding={{ left: 0 }}/>
-              <YAxis/>
-            </BarChart>
+          <ResponsiveContainer  width="100%" height={300} wrapperStyle={{left:2, right:2}}>
+           
+            <PieChart width={500} height={300}>
+              <Legend wrapperStyle={{fontSize: 12, fontWeight: "bold"}}/>
+              <Pie data={bloodData} dataKey="number" nameKey="name" cx="50%" cy="50%" outerRadius={100} fill="#8884d8" label={{fontWeight: 'bold', fontSize: '12px'}} labelLine={false}/>
+
+            </PieChart>
 
           </ResponsiveContainer> 
           <ChartHeading>Student Blood Group</ChartHeading>
