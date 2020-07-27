@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import {students, champions} from '../data/students'
 import {
   RadialBarChart, RadialBar, BarChart, Bar, XAxis, YAxis, Legend, Tooltip, ResponsiveContainer,
-  Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Label
+  Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Label, LabelList
 } from 'recharts';
 
 
@@ -27,8 +27,6 @@ const heightData = [
   }
 ];
 
-
-
 students.forEach(s => {
   console.log(s.height)
   const h = s.height;
@@ -48,7 +46,37 @@ students.forEach(s => {
     heightData[4].number++
   }
 })
+// height data
+const bloodData = [
+  {
+    name: 'A', number: 0, fill:'#7b341e'
+  },
+  {
+    name: 'B', number: 0, fill:'#c05621'
+  },
+  {
+    name: 'AB', number: 0, fill:'#dd6b20'
+  },
+  {
+    name: 'O', number: 0, fill:'#f6ad55'
+  }
+];
 
+students.forEach(s => {
+  const b = s.blood;
+  if(b=='a') {
+    bloodData[0].number++
+  }
+  else if (b == 'b') {
+    bloodData[1].number++
+  }
+  else if (b == 'ab') {
+    bloodData[2].number++
+  }
+  else {
+    bloodData[3].number++
+  }
+})
 const HR = styled.hr`
 ${tw `my-8`}
 `
@@ -154,10 +182,10 @@ export default function Home() {
         </ChartWrapper>
         <ChartWrapper>
           
-          <ResponsiveContainer  width="100%" height={300} wrapperStyle={{left:2, right:2}}>
-            <BarChart width={500} height={300}  data={heightData}>
-              <Bar  dataKey="number" />
-              <XAxis/>
+          <ResponsiveContainer  width="100%" height={300} >
+            <BarChart width={400} height={300}  data={bloodData} margin={{ top: 30, right: 45, left: 10, bottom: 5 }}  barSize={30}>
+              <Bar dataKey="number" ><LabelList dataKey="number" position="top"/></Bar>
+              <XAxis dataKey="name" tickLine={false} padding={{ left: 0 }}/>
               <YAxis/>
             </BarChart>
 
