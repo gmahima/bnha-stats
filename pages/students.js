@@ -4,12 +4,12 @@ import tw from 'twin.macro'
 import Layout from '../components/layout'
 import {students, champions} from '../data/students'
 import {
-  RadialBarChart, RadialBar, Legend, Tooltip, ResponsiveContainer,
+  RadialBarChart, RadialBar, BarChart, Bar, XAxis, YAxis, Legend, Tooltip, ResponsiveContainer,
   Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Label
 } from 'recharts';
 
 
-const data = [
+const heightData = [
   {
     name: '< 140', number: 0, fill:'#7b341e'
   },
@@ -33,19 +33,19 @@ students.forEach(s => {
   console.log(s.height)
   const h = s.height;
   if(h<140) {
-    data[0].number++
+    heightData[0].number++
   }
   else if (h<=150) {
-    data[1].number++
+    heightData[1].number++
   }
   else if (h<=160) {
-    data[2].number++
+    heightData[2].number++
   }
   else if (h<=170) {
-    data[3].number++
+    heightData[3].number++
   }
   else {
-    data[4].number++
+    heightData[4].number++
   }
 })
 
@@ -145,7 +145,7 @@ export default function Home() {
         <ChartWrapper>
           
           <ResponsiveContainer  width="100%" height={300} wrapperStyle={{left:2, right:2}}>
-            <RadialBarChart width={500} height={300} innerRadius={20} outerRadius={150} barSize={10} data={data}>
+            <RadialBarChart width={500} height={300} innerRadius={20} outerRadius={150} barSize={10} data={heightData}>
               <RadialBar label={{ position: 'end', fill: '#000' }} background clockWise dataKey="number" />
               <Legend iconSize={6} width={80} height={100} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
             </RadialBarChart>
@@ -155,22 +155,26 @@ export default function Home() {
         <ChartWrapper>
           
           <ResponsiveContainer  width="100%" height={300} wrapperStyle={{left:2, right:2}}>
-            <RadialBarChart width={500} height={300} innerRadius={20} outerRadius={150} barSize={10} data={data}>
-              <RadialBar label={{ position: 'end', fill: '#000' }} background clockWise dataKey="number" />
-              <Legend iconSize={6} width={80} height={100} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
-            </RadialBarChart>
+            <BarChart width={500} height={300}  data={heightData}>
+              <Bar  dataKey="number" />
+              <XAxis/>
+              <YAxis/>
+            </BarChart>
+
           </ResponsiveContainer> 
-          <ChartHeading>Student Heights in cm</ChartHeading>
+          <ChartHeading>Student Blood Group</ChartHeading>
         </ChartWrapper>
         <ChartWrapper>
           
           <ResponsiveContainer  width="100%" height={300} wrapperStyle={{left:2, right:2}}>
-            <RadialBarChart width={500} height={300} innerRadius={20} outerRadius={150} barSize={10} data={data}>
-              <RadialBar label={{ position: 'end', fill: '#000' }} background clockWise dataKey="number" />
-              <Legend iconSize={6} width={80} height={100} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
-            </RadialBarChart>
+            <BarChart width={500} height={300}  data={heightData}>
+              <Bar  dataKey="number" />
+              <XAxis/>
+              <YAxis/>
+            </BarChart>
+
           </ResponsiveContainer> 
-          <ChartHeading>Student Heights in cm</ChartHeading>
+          <ChartHeading>Student Attack Styles</ChartHeading>
         </ChartWrapper>
         </Stats>
       </Content>
