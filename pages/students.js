@@ -52,7 +52,6 @@ const heightData = [
 ];
 
 students.forEach(s => {
-  console.log(s.height)
   const h = s.height;
   if(h<140) {
     heightData[0].number++
@@ -138,8 +137,15 @@ students.forEach(s => {
     attackData[4].number++
   }
 })
-
-
+let championNames = []
+champions.ids.forEach(c => {
+  students.forEach(s => {
+    if(s.id === c) {
+      championNames.push(s.name)
+      console.log(championNames)
+    }
+  })
+});
 
 const style = {
   top: 10,
@@ -165,7 +171,7 @@ export default function Home() {
           <Radar name="#3 Tokoyami Fumikage" dataKey="third" stroke="#ecc94b" fill="#ecc94b" fillOpacity={0.6}/>
           <Radar name="#2 Todoroki Shouto" dataKey="second" stroke="#d69e2e" fill="#d69e2e" fillOpacity={0.6}/>
           <Radar name="#1 Bakugo Katsuki" dataKey="first" stroke="#744210" fill="#744210" fillOpacity={0.6}/>
-          <Legend wrapperStyle={{fontSize: '12px', fontWeight:'bold', backgroundColor: ' #edf2f7', padding: 5}}/>
+          <Legend wrapperStyle={{fontSize: '12px', fontWeight:'bold', padding: 5}} />
           <Tooltip wrapperStyle={{fontSize: '3px', fontWeight: 'bold',height:20, opacity:0.9}}/>
           
         </RadarChart>
@@ -176,9 +182,9 @@ export default function Home() {
         <h2>Winners</h2>
                       <div>
                       
-                      <span>1. Bakugo Katsuki</span>
-                      <span>2. Todoroki Shoto</span>
-                      <span>3. Tokoyami Fumikage</span>
+                      <span>1. {championNames[0]}</span>
+                      <span>2. {championNames[1]}</span>
+                      <span>3. {championNames[2]}</span>
                       </div>
         <p>The massive event had millions of people awestruck this year as well! Our students fought with all their might and showed people around the world that no villain could stand up against them</p>
         <p>This year's winners were awarded by the no.1 Hero All Might himself! </p>
