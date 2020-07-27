@@ -83,7 +83,7 @@ export default function Home() {
               <Legend iconSize={6} width={80} height={100} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
             </SRadialBarChart>
           </ResponsiveContainer> 
-          <ChartHeading>Student Heights</ChartHeading>
+          <ChartHeading>Student Heights in cm</ChartHeading>
         </ChartWrapper>
         
         {/* <StyledArea
