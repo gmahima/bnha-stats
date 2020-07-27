@@ -109,7 +109,7 @@ const students = [
         height:158,
         blood:'ab',
         style:['melee'],
-        name: 'tokoyami fumikage'
+        name: 'Tokoyami Fumikage'
     },
     {
         id:15,
@@ -117,7 +117,7 @@ const students = [
         height:176,
         blood:'o',
         style:['long-ranged'],
-        name: 'todoroki shoto'
+        name: 'Todoroki Shoto'
     },
     {
         id:16,
@@ -133,7 +133,7 @@ const students = [
         height:172,
         blood:'a',
         style:['melee', 'ranged'],
-        name: 'bakugo katsuki'
+        name: 'Bakugo Katsuki'
     },
     {
         id:18,

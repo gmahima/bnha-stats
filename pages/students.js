@@ -27,6 +27,8 @@ const data = [
   }
 ];
 
+
+
 students.forEach(s => {
   console.log(s.height)
   const h = s.height;
@@ -48,16 +50,40 @@ students.forEach(s => {
 })
 
 const Heading = styled.h1`
- ${tw `text-black text-4xl sm:text-6xl font-semibold sm:mb-16`}
+ ${tw `text-yellow-700 text-3xl sm:text-6xl font-semibold sm:mb-16 border-b-2 mx-2 border-yellow-700`}
 `
 const Content = styled.div`
  ${tw`border border-red-700 flex flex-col p-0`}
 `
+const Stats = styled.div`
+${tw `border border-pink-400 flex flex-col sm:flex-row flex-wrap justify-around`}
+`
 
+const ChartWrapper = styled.div`${tw `border border-2 border-orange-700 shadow-lg rounded-lg  flex flex-col my-2 sm:m-4 w-full sm:w-1/3 sm:self-center`}
+${props => {
+  if(props.champions) {
+    return tw`shadow-2xl sm:w-2/3 sm:ml-16`
+  }
+}}
 
-const ChartWrapper = styled.div`${tw `border border-2 border-orange-700 shadow-2xl rounded-lg  flex flex-col my-2 sm:m-4 sm:w-1/3 sm:self-center`}
-
-
+`
+const ChampionDiv = styled.div`${tw`flex flex-col sm:flex-row justify-center `}`
+const ChampionDesc = styled.div`${tw`bg-yellow-400 self-center m-8 rounded-lg p-4 shadow-2xl border text-yellow-600`}
+h1 {
+  ${tw `text-yellow-700 text-3xl font-bold `}
+}
+h2 {
+  ${tw `text-yellow-700 font-semibold text-lg`}
+}
+p {
+  ${tw `text-sm`}
+}
+div {
+  ${tw `mb-4 flex flex-wrap`}
+}
+span {
+  ${tw `rounded bg-yellow-700 text-yellow-200 p-1 mr-2 shadow-sm text-xs` }
+}
 `
 
 const ChartHeading = styled.h1`${tw`font-semibold text-lg text-center p-4 bg-orange-700 text-white`}
@@ -81,8 +107,39 @@ export default function Home() {
   return (
     <Layout navTo="teachers">
       <Content>
-        <Heading>student-stats</Heading>
+        <Heading>UA Students</Heading>
+        <ChampionDiv>
+        <ChartWrapper champions>
+          <ResponsiveContainer  width="100%" height={400} wrapperStyle={{left:2, right:2}}>
+          <RadarChart width={500} height={300} data={champions.stats} outerRadius={120}>
+          <PolarGrid stroke="#b7791f"/>
+          <PolarAngleAxis dataKey="field" tick={{fontSize: '10px', fontWeight: 'bold'}} />
+          <Radar name="#3 Tokoyami Fumikage" dataKey="third" stroke="#ecc94b" fill="#ecc94b" fillOpacity={0.6}/>
+          <Radar name="#2 Todoroki Shouto" dataKey="second" stroke="#d69e2e" fill="#d69e2e" fillOpacity={0.6}/>
+          <Radar name="#1 Bakugo Katsuki" dataKey="first" stroke="#744210" fill="#744210" fillOpacity={0.6}/>
+          <Legend wrapperStyle={{fontSize: '12px', fontWeight:'bold', backgroundColor: ' #edf2f7', padding: 5}}/>
+          <Tooltip wrapperStyle={{fontSize: '3px', fontWeight: 'bold',height:20, opacity:0.9}}/>
+          
+        </RadarChart>
+          </ResponsiveContainer> 
+          <ChartHeading champions>Sports Festival Champions</ChartHeading>
+        </ChartWrapper>
+        <ChampionDesc><h1>The UA sports festival</h1>
+        <h2>Winners</h2>
+                      <div>
+                      
+                      <span>1. Bakugo Katsuki</span>
+                      <span>2. Todoroki Shoto</span>
+                      <span>3. Tokoyami Fumikage</span>
+                      </div>
+        <p>The massive event had millions of people awestruck this year as well! Our students fought with all their might and showed people around the world that no villain could stand up against them</p>
+        <p>This year's winners were awarded by the no.1 Hero All Might himself! </p>
+                      
+        </ChampionDesc>
+        </ChampionDiv>
+        <Stats>
         <ChartWrapper>
+          
           <ResponsiveContainer  width="100%" height={300} wrapperStyle={{left:2, right:2}}>
             <RadialBarChart width={500} height={300} innerRadius={20} outerRadius={150} barSize={10} data={data}>
               <RadialBar label={{ position: 'end', fill: '#000' }} background clockWise dataKey="number" />
@@ -91,24 +148,17 @@ export default function Home() {
           </ResponsiveContainer> 
           <ChartHeading>Student Heights in cm</ChartHeading>
         </ChartWrapper>
-        <ChartWrapper champions>
-          <ResponsiveContainer  width="100%" height={300} wrapperStyle={{left:2, right:2}}>
-          <RadarChart width={500} height={300} data={champions.stats} outerRadius={100}>
-          <PolarGrid stroke="#b7791f"/>
-          <PolarAngleAxis dataKey="field" tick={{fontSize: '10px'}} />
-          <Radar name="#3 Tokoyami Fumikage" dataKey="third" stroke="#ecc94b" fill="#ecc94b" fillOpacity={0.6}/>
-          <Radar name="#2 Todoroki Shouto" dataKey="second" stroke="#d69e2e" fill="#d69e2e" fillOpacity={0.6}/>
-          <Radar name="#1 Bakugo Katsuki" dataKey="first" stroke="#744210" fill="#744210" fillOpacity={0.6}/>
-          <Legend wrapperStyle={{fontSize: '12px', fontWeight:'bold'}}/>
-          <Tooltip />
+        <ChartWrapper>
           
-        </RadarChart>
+          <ResponsiveContainer  width="100%" height={300} wrapperStyle={{left:2, right:2}}>
+            <RadialBarChart width={500} height={300} innerRadius={20} outerRadius={150} barSize={10} data={data}>
+              <RadialBar label={{ position: 'end', fill: '#000' }} background clockWise dataKey="number" />
+              <Legend iconSize={6} width={80} height={100} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
+            </RadialBarChart>
           </ResponsiveContainer> 
-          <ChartHeading champions>Sports Festival Champions</ChartHeading>
+          <ChartHeading>Student Heights in cm</ChartHeading>
         </ChartWrapper>
-        
-
-
+        </Stats>
       </Content>
       
     </Layout>
