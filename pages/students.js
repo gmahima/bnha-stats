@@ -56,7 +56,7 @@ const Content = styled.div`
  ${tw`border border-red-700 flex flex-col p-0`}
 `
 const Stats = styled.div`
-${tw `border border-pink-400 flex flex-col sm:flex-row flex-wrap justify-around`}
+${tw `border border-pink-400 flex flex-col sm:flex-row flex-wrap justify-center`}
 `
 
 const ChartWrapper = styled.div`${tw `border border-2 border-orange-700 shadow-lg rounded-lg  flex flex-col my-2 sm:m-4 w-full sm:w-1/3 sm:self-center`}
@@ -138,6 +138,16 @@ export default function Home() {
         </ChampionDesc>
         </ChampionDiv>
         <Stats>
+        <ChartWrapper>
+          
+          <ResponsiveContainer  width="100%" height={300} wrapperStyle={{left:2, right:2}}>
+            <RadialBarChart width={500} height={300} innerRadius={20} outerRadius={150} barSize={10} data={data}>
+              <RadialBar label={{ position: 'end', fill: '#000' }} background clockWise dataKey="number" />
+              <Legend iconSize={6} width={80} height={100} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
+            </RadialBarChart>
+          </ResponsiveContainer> 
+          <ChartHeading>Student Heights in cm</ChartHeading>
+        </ChartWrapper>
         <ChartWrapper>
           
           <ResponsiveContainer  width="100%" height={300} wrapperStyle={{left:2, right:2}}>
