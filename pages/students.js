@@ -49,14 +49,17 @@ students.forEach(s => {
   }
 })
 
+const HR = styled.hr`
+${tw `my-8`}
+`
 const Heading = styled.h1`
  ${tw `text-yellow-700 text-3xl sm:text-6xl font-semibold sm:mb-16 border-b-2 mx-2 border-yellow-700`}
 `
 const Content = styled.div`
- ${tw`border border-red-700 flex flex-col p-0`}
+ ${tw` flex flex-col p-0`}
 `
 const Stats = styled.div`
-${tw `border border-pink-400 flex flex-col sm:flex-row flex-wrap justify-center`}
+${tw ` flex flex-col sm:flex-row flex-wrap justify-center`}
 `
 
 const ChartWrapper = styled.div`${tw `border border-2 border-orange-700 shadow-lg rounded-lg  flex flex-col my-2 sm:m-4 w-full sm:w-1/3 sm:self-center`}
@@ -137,6 +140,7 @@ export default function Home() {
                       
         </ChampionDesc>
         </ChampionDiv>
+        <HR/>
         <Stats>
         <ChartWrapper>
           
