@@ -55,9 +55,23 @@ const Content = styled.div`
 `
 
 
-const ChartWrapper = styled.div`${tw `border border-2 border-orange-700 shadow-2xl rounded-lg  flex flex-col my-2 sm:m-4 sm:w-1/3 sm:self-center`}`
+const ChartWrapper = styled.div`${tw `border border-2 border-orange-700 shadow-2xl rounded-lg  flex flex-col my-2 sm:m-4 sm:w-1/3 sm:self-center`}
+${props => {
+  if(props.champions) {
+    return tw`border-yellow-400 border-4`
+  }
+}}
 
-const ChartHeading = styled.h1`${tw`font-semibold text-lg text-center p-4 bg-orange-700 text-white`}`
+`
+
+const ChartHeading = styled.h1`${tw`font-semibold text-lg text-center p-4 bg-orange-700 text-white`}
+${props => {
+  if(props.champions) {
+    return tw`bg-yellow-400 text-orange-700`
+  }
+}}
+
+`
 const style = {
   top: 10,
   right: 5,
@@ -82,21 +96,20 @@ export default function Home() {
           </ResponsiveContainer> 
           <ChartHeading>Student Heights in cm</ChartHeading>
         </ChartWrapper>
-        <ChartWrapper>
+        <ChartWrapper champions>
           <ResponsiveContainer  width="100%" height={300} wrapperStyle={{left:2, right:2}}>
           <RadarChart width={500} height={300} data={champions.stats} outerRadius={100}>
           <PolarGrid />
           <PolarAngleAxis dataKey="field" />
-          <PolarRadiusAxis/>
           <Radar name="#3 Tokoyami Fumikage" dataKey="third" stroke="blue" fill="blue" fillOpacity={0.6}/>
           <Radar name="#2 Todoroki Shouto" dataKey="second" stroke="red" fill="red" fillOpacity={0.6}/>
           <Radar name="#1 Bakugo Katsuki" dataKey="first" stroke="green" fill="green" fillOpacity={0.6}/>
-          <Legend />
+          <Legend wrapperStyle={{fontSize: '12px', fontWeight:'bold'}}/>
           <Tooltip />
           
         </RadarChart>
           </ResponsiveContainer> 
-          <ChartHeading>Student Heights in cm</ChartHeading>
+          <ChartHeading champions>Sports Festival Champions</ChartHeading>
         </ChartWrapper>
         
 
