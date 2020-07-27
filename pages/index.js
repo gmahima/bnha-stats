@@ -33,11 +33,13 @@ ${tw`
 const Span=styled.span`
 width: 400px;
 height: 20px;
-${tw `text-gray-500 absolute bottom-0 left-0 pb-2 text-xs`}
+${tw `text-gray-500 bottom-0 left-0 pb-2 text-xs`}
 `
 const Div = styled.div`${tw`bg-black h-screen `}`
 export default function Home() {
   return (
+    <>
+    
     <Container>
       <Head>
         <title>UA Records</title>
@@ -47,8 +49,9 @@ export default function Home() {
       <p>We here at UA train our students to become the best superheroes and save the world</p>
       <Links><Link href="/teachers"><A>Check out Teacher Stats</A></Link><Link href="/students"><A>Check out Student stats</A></Link></Links>
       </Content>
-      <Span>data reference: <a href="https://bokunoheroacademia.fandom.com/wiki/Class_1-A">https://bokunoheroacademia.fandom.com/wiki/Class_1-A</a></Span>
     </Container>
+    <Span>data reference: <a href="https://bokunoheroacademia.fandom.com/wiki/Class_1-A">https://bokunoheroacademia.fandom.com/wiki/Class_1-A</a></Span>
+    </>
     
     
     
