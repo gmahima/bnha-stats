@@ -30,6 +30,9 @@ ${tw`
 // ${tw`capitalize text-lg font-thin mx-8 my-2 flex items-center cursor-pointer  border-yellow-600 border-2 py-1 px-2 self-center rounded`}
 // `
 
+const Span=styled.span`
+${tw `text-gray-700 absolute bottom-0 left-0 bg-gray-400 p-1 `}
+`
 
 export default function Home() {
   return (
@@ -42,7 +45,7 @@ export default function Home() {
       <p>We here at UA train our students to become the best superheroes and save the world</p>
       <Links><Link href="/teachers"><A>Check out Teacher Stats</A></Link><Link href="/students"><A>Check out Student stats</A></Link></Links>
       </Content>
-      
+      <Span>data reference: <a href="https://bokunoheroacademia.fandom.com/wiki/Class_1-A">https://bokunoheroacademia.fandom.com/wiki/Class_1-A</a></Span>
     </Container>
     
     

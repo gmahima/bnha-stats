@@ -7,10 +7,8 @@ const Teachers= [
     {name: 'Ectoplasm', leadership: 8, cooperation: 8, wit: 7, responsibility: 6, combat: 8},
 
 ]
-// const Teachers = [
-//     {name: 'Eraserhead',id: 1}, {name: 'Present Mic',id: 2}, {name: 'All Might',id: 3}, {name: 'Cementos',id: 4}, {name: 'Midnight',id: 5}, {name: 'Ectoplasm',id: 6}
-// ]
-// https://bokunoheroacademia.fandom.com/wiki/Class_1-A
+
+
 
 
 export default Teachers
