@@ -35,7 +35,7 @@ width: 400px;
 height: 20px;
 ${tw `text-gray-500 absolute bottom-0 left-0 pb-2 text-xs`}
 `
-
+const Div = styled.div`${tw`bg-black h-screen `}`
 export default function Home() {
   return (
     <Container>
