@@ -33,7 +33,7 @@ ${tw`
 const Span=styled.span`
 width: 400px;
 height: 20px;
-${tw `text-gray-700 absolute bottom-0 left-0 bg-gray-400 p-1 text-xs`}
+${tw `text-gray-500 absolute bottom-0 left-0 pb-2 text-xs`}
 `
 
 export default function Home() {

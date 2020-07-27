@@ -148,12 +148,9 @@ champions.ids.forEach(c => {
 });
 
 const style = {
-  top: 10,
-  right: 5,
   lineHeight: '15px',
   fontSize: '8px',
-  background: '#eee',
-  padding: 5
+  fontWeight: 'bold'
 
 };
 
@@ -198,7 +195,7 @@ export default function Home() {
           <ResponsiveContainer  width="100%" height={300} wrapperStyle={{left:2, right:2}}>
             <RadialBarChart width={500} height={300} innerRadius={20} outerRadius={130} barSize={10} data={heightData}>
               <RadialBar label={{ position: 'end', fill: '#000',  fontSize: '12px', fontWeight: 'bold'}} background clockWise dataKey="number" />
-              <Legend iconSize={6} width={80} height={100} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
+              <Legend iconSize={6} layout="horizontal" wrapperStyle={style} />
             </RadialBarChart>
           </ResponsiveContainer> 
           <ChartHeading>Student Heights in cm</ChartHeading>
