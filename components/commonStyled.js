@@ -6,7 +6,7 @@ const Heading = styled.h1`
  ${tw `text-yellow-700 text-3xl sm:text-6xl font-semibold sm:mb-16 border-b-2 mx-2 border-yellow-700`}
 `
 const Content = styled.div`
- ${tw` flex flex-col p-0`}
+ ${tw` flex flex-col p-0 border border-red-700`}
 `
 
 

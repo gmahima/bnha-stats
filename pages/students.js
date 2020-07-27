@@ -257,11 +257,11 @@ export default function Home() {
 
         <ChartWrapper >
           <ResponsiveContainer  width="100%" height={300} >
-            <BarChart width={700} height={300} data={attackData} barCategoryGap='20%' margin={{ top: 30, right: 0, left: 0, bottom: 5 }}>
+            <BarChart width={700} height={300} data={attackData} barCategoryGap='20%' margin={{ top: 30, right: 0, left: 0, bottom: 20 }}>
               <Bar dataKey="number">
                 <LabelList dataKey="number" position="top"/>
               </Bar>
-              <XAxis dataKey="name" interval={0} fontSize='12px' tickLine={false}/>
+              <XAxis dataKey="name" interval={0} fontSize='12px' tickLine={false} angle={-20} textAnchor="end"/>
               <YAxis />
             </BarChart>
             
