@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import {students, champions} from '../data/students'
 import {
   RadialBarChart, RadialBar, BarChart, Bar, XAxis, YAxis, Legend, Tooltip, ResponsiveContainer,
-  Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Label, LabelList
+  Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Label, LabelList,PieChart, Pie, Sector, Cell
 } from 'recharts';
 import {ChartWrapper, ChartHeading, Content,  Heading} from '../components/commonStyled'
 
