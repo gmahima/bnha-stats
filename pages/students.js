@@ -24,10 +24,10 @@ p {
   ${tw `text-sm`}
 }
 div {
-  ${tw `mb-4 flex flex-wrap`}
+  ${tw `mb-4 flex flex-wrap sm:flex-row flex-col`}
 }
 span {
-  ${tw `rounded bg-yellow-700 text-yellow-200 p-1 mr-2 shadow-sm text-xs` }
+  ${tw `rounded bg-yellow-700 text-yellow-200 p-1 mr-2 shadow-sm text-xs mb-2 sm:mb-0` }
 }
 `
 const HR = styled.hr`
@@ -190,7 +190,7 @@ const style = {
   top: 10,
   right: 5,
   lineHeight: '15px',
-  fontSize: '12px',
+  fontSize: '8px',
   background: '#eee',
   padding: 5
 
@@ -235,8 +235,8 @@ export default function Home() {
         <ChartWrapper>
           
           <ResponsiveContainer  width="100%" height={300} wrapperStyle={{left:2, right:2}}>
-            <RadialBarChart width={500} height={300} innerRadius={20} outerRadius={150} barSize={10} data={heightData}>
-              <RadialBar label={{ position: 'end', fill: '#000' }} background clockWise dataKey="number" />
+            <RadialBarChart width={500} height={300} innerRadius={20} outerRadius={130} barSize={10} data={heightData}>
+              <RadialBar label={{ position: 'end', fill: '#000',  fontSize: '12px', fontWeight: 'bold'}} background clockWise dataKey="number" />
               <Legend iconSize={6} width={80} height={100} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
             </RadialBarChart>
           </ResponsiveContainer> 
