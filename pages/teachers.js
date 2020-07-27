@@ -17,13 +17,13 @@ const data = [
 ];
 
 const StyledChartWrapper = styled(ChartWrapper) `
-  ${tw`shadow-2xl sm:w-1/2 border-yellow-700`}
+  ${tw`shadow-2xl sm:w-1/2 border-yellow-400 border-4`}
 
 
 
 `
 const StyledChartHeading = styled(ChartHeading) `
- ${tw `bg-yellow-700`}
+ ${tw `bg-yellow-400 text-yellow-700`}
 `
 
 export default function Home() {
@@ -37,14 +37,14 @@ export default function Home() {
         width={400}
         height={400}
         margin={{
-          top: 20, right: 20, bottom: 20, left: 20,
+          top: 20, right: 30, bottom: 20, left: 20,
         }}
       >
         <CartesianGrid />
-        <XAxis type="number" dataKey="x" name="stature" unit="cm" />
+        <XAxis type="number" dataKey="x" name="height" unit="cm" />
         <YAxis type="number" dataKey="y" name="weight" unit="kg" />
         <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-        <Scatter name="A school" data={data} fill="#8884d8" />
+        <Scatter name="A school" data={data} fill="#d69e2e" />
       </ScatterChart>
           
           </ResponsiveContainer>

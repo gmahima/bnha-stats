@@ -266,7 +266,7 @@ export default function Home() {
             </BarChart>
             
           </ResponsiveContainer> 
-          <ChartHeading>Student Attack Styles</ChartHeading>
+          <ChartHeading>Student Combat Styles</ChartHeading>
         </ChartWrapper>
         </Stats>
       </Content>
