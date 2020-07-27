@@ -237,7 +237,7 @@ export default function Home() {
               <Bar dataKey="number">
                 <LabelList dataKey="number" position="top"/>
               </Bar>
-              <XAxis dataKey="name" interval={0} fontSize='12px'/>
+              <XAxis dataKey="name" interval={0} fontSize='12px' tickLine={false}/>
               <YAxis />
             </BarChart>
             
