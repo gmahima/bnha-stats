@@ -17,7 +17,7 @@ const Container = styled.div`
     ${tw`w-full min-h-screen h-full flex flex-col `}
 `
 const Div = styled.div`
-    ${tw`mt-16 mx-8 text-left`}
+    ${tw`mt-16 sm:mx-8 text-left`}
 `
 
 const Layout = (props) => (
