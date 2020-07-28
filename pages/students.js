@@ -12,8 +12,8 @@ import {ChartWrapper, ChartHeading, Content,  Heading} from '../components/commo
 const Stats = styled.div`
 ${tw ` flex flex-col sm:flex-row flex-wrap justify-center`}
 `
-const ChampionDiv = styled.div`${tw`flex flex-col sm:flex-row justify-center border py-4 bg-yellow-400 shadow-2xl sm:w-4/5 self-end`}`
-const ChampionDesc = styled.div`${tw`bg-yellow-400 self-center m-8 rounded-lg p-4  text-yellow-600`}
+const ChampionDiv = styled.div`${tw`flex flex-col sm:flex-row justify-center border py-4 bg-yellow-400 shadow-2xl sm:w-4/5 self-end border border-yellow-500 border-8 `}`
+const ChampionDesc = styled.div`${tw`bg-yellow-400 self-center m-8 rounded-lg p-4  text-yellow-600 `}
 h1 {
   ${tw `text-yellow-700 text-3xl font-bold `}
 }
