@@ -10,7 +10,7 @@ const Content = styled.div`
 `
 
 
-const ChartWrapper = styled.div`${tw ` bg-white shadow-xl border border-gray-300 rounded-lg  flex flex-col my-2 sm:m-4 w-full sm:w-1/3 sm:self-center`}
+const ChartWrapper = styled.div`${tw ` bg-white shadow-xl border border-gray-300 rounded-lg  flex flex-col mx-0 my-2 sm:m-4 w-full sm:w-1/3 sm:self-center`}
 ${props => {
   if(props.champions) {
     return tw`sm:ml-16  shadow-none rounded-none  shadow-sm flex-grow sm:border-gray-400 sm:border-4`
