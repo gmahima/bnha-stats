@@ -12,13 +12,13 @@ import {ChartWrapper, ChartHeading, Content,  Heading} from '../components/commo
 const Stats = styled.div`
 ${tw ` flex flex-col sm:flex-row flex-wrap justify-center`}
 `
-const ChampionDiv = styled.div`${tw`flex flex-col sm:flex-row justify-center border py-4 bg-yellow-400 shadow-2xl sm:w-4/5 self-end border border-yellow-500 border-8 `}`
-const ChampionDesc = styled.div`${tw`bg-yellow-400 self-center m-8 rounded-lg p-4  text-yellow-600 `}
+const ChampionDiv = styled.div`${tw`flex flex-col sm:flex-row justify-center border py-4 bg-yellow-400 shadow-2xl sm:w-4/5 self-center border border-yellow-500 border-8 bg-gray-900 border-8 border-gray-700`}`
+const ChampionDesc = styled.div`${tw`bg-yellow-400 self-center m-8 rounded-lg p-4  text-yellow-600 bg-gray-900 w-2/5 text-gray-500`}
 h1 {
-  ${tw `text-yellow-700 text-3xl font-bold `}
+  ${tw `text-yellow-700 text-3xl font-bold text-gray-300`}
 }
 h2 {
-  ${tw `text-yellow-700 font-semibold text-lg`}
+  ${tw `text-yellow-700 font-semibold text-lg text-gray-400 mt-1`}
 }
 p {
   ${tw `text-sm`}
@@ -27,7 +27,7 @@ div {
   ${tw `mb-4 flex flex-wrap sm:flex-row flex-col`}
 }
 span {
-  ${tw `rounded bg-yellow-700 text-yellow-200 p-1 mr-2 shadow-sm text-xs mb-2 sm:mb-0` }
+  ${tw `rounded bg-yellow-700 text-yellow-200 p-1 mr-2 shadow-sm text-xs mb-2 sm:mb-0 bg-gray-300 text-gray-700` }
 }
 `
 const HR = styled.hr`
@@ -163,11 +163,11 @@ export default function Home() {
         <ChartWrapper champions>
           <ResponsiveContainer  width="100%" height={400} wrapperStyle={{left:4, right:4}}>
           <RadarChart width={500} height={300} data={champions.stats} outerRadius={120}>
-          <PolarGrid stroke="#ecc94b"/>
+          <PolarGrid stroke="#a0aec0"/>
           <PolarAngleAxis dataKey="field" tick={{fontSize: '10px', fontWeight: 'bold'}} />
-          <Radar name={'#3 '+championNames[2]} dataKey="third" stroke="#ecc94b" fill="#ecc94b" fillOpacity={0.6}/>
-          <Radar name={"#2 "+championNames[1]} dataKey="second" stroke="#d69e2e" fill="#d69e2e" fillOpacity={0.6}/>
-          <Radar name={"#1 "+championNames[0]} dataKey="first" stroke="#744210" fill="#744210" fillOpacity={0.6}/>
+          <Radar name={'#3 '+championNames[2]} dataKey="third" stroke="#1a202c" fill="#1a202c" fillOpacity={0.6}/>
+          <Radar name={"#2 "+championNames[1]} dataKey="second" stroke=" #718096" fill="#718096" fillOpacity={0.6}/>
+          <Radar name={"#1 "+championNames[0]} dataKey="first" stroke="#1a202c" fill="#1a202c" fillOpacity={0.6}/>
           <Legend wrapperStyle={{fontSize: '12px', fontWeight:'bold', padding: 5}}/>
           <Tooltip wrapperStyle={{fontSize: '3px', fontWeight: 'bold',height:20, opacity:0.9}}/>
           

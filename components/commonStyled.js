@@ -13,7 +13,7 @@ const Content = styled.div`
 const ChartWrapper = styled.div`${tw ` bg-white shadow-xl border border-gray-300 rounded-lg  flex flex-col my-2 sm:m-4 w-full sm:w-1/3 sm:self-center`}
 ${props => {
   if(props.champions) {
-    return tw` sm:w-2/3 sm:ml-16  shadow-none rounded-none border-yellow-500 border border-4 shadow-sm`
+    return tw`  sm:ml-16  shadow-none rounded-none border-yellow-500 border border-4 shadow-sm flex-grow border-gray-400 border-4`
   }
 }}
 
