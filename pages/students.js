@@ -12,8 +12,8 @@ import {ChartWrapper, ChartHeading, Content,  Heading} from '../components/commo
 const Stats = styled.div`
 ${tw ` flex flex-col sm:flex-row flex-wrap justify-center`}
 `
-const ChampionDiv = styled.div`${tw`flex flex-col sm:flex-row justify-center `}`
-const ChampionDesc = styled.div`${tw`bg-yellow-400 self-center m-8 rounded-lg p-4 shadow-2xl border text-yellow-600`}
+const ChampionDiv = styled.div`${tw`flex flex-col sm:flex-row justify-center border py-4 bg-yellow-400 shadow-2xl sm:w-4/5 self-end`}`
+const ChampionDesc = styled.div`${tw`bg-yellow-400 self-center m-8 rounded-lg p-4  text-yellow-600`}
 h1 {
   ${tw `text-yellow-700 text-3xl font-bold `}
 }
@@ -35,19 +35,19 @@ ${tw `my-8`}
 `
 const heightData = [
   {
-    name: '< 140', number: 0, fill:'#7b341e'
+    name: '< 140', number: 0, fill:'#1a202c'
   },
   {
-    name: '140-150', number: 0, fill:'#c05621'
+    name: '140-150', number: 0, fill:'#4a5568'
   },
   {
-    name: '150-160', number: 0, fill:'#dd6b20'
+    name: '150-160', number: 0, fill:'#718096'
   },
   {
-    name: '160-170', number: 0, fill:'#ed8936'
+    name: '160-170', number: 0, fill:'#a0aec0'
   },
   {
-    name: '170-180', number: 0, fill:'#f6ad55'
+    name: '170-180', number: 0, fill:'#e2e8f0'
   }
 ];
 
@@ -72,16 +72,16 @@ students.forEach(s => {
 // blood data
 const bloodData = [
   {
-    name: 'A', number: 0, fill:'#7b341e'
+    name: 'A', number: 0, fill:'#1a202c'
   },
   {
-    name: 'B', number: 0, fill:'#c05621'
+    name: 'B', number: 0, fill:'#4a5568'
   },
   {
-    name: 'AB', number: 0, fill:'#dd6b20'
+    name: 'AB', number: 0, fill:'#718096'
   },
   {
-    name: 'O', number: 0, fill:'#f6ad55'
+    name: 'O', number: 0, fill:'#cbd5e0'
   }
 ];
 
@@ -104,19 +104,19 @@ students.forEach(s => {
 //attack data 
 const attackData = [
   {
-    name: 'ranged', number: 0, fill:'#c05621'
+    name: 'ranged', number: 0, fill:'#4a5568'
   },
   {
-    name: 'melee', number: 0, fill:'#7b341e'
+    name: 'melee', number: 0, fill:'#1a202c'
   },
   {
-    name: 'long-ranged', number: 0, fill:'#f6ad55'
+    name: 'long-ranged', number: 0, fill:'#cbd5e0'
   },
   {
-    name: 'medium-ranged', number: 0, fill:'#f6ad55'
+    name: 'medium-ranged', number: 0, fill:'#000'
   },
   {
-    name: 'support', number: 0, fill:'#dd6b20'
+    name: 'support', number: 0, fill:'#718096'
   },
 ];
 students.forEach(s => {
@@ -161,7 +161,7 @@ export default function Home() {
         <Heading>UA Students</Heading>
         <ChampionDiv>
         <ChartWrapper champions>
-          <ResponsiveContainer  width="100%" height={400} wrapperStyle={{left:2, right:2}}>
+          <ResponsiveContainer  width="100%" height={400} wrapperStyle={{left:4, right:4}}>
           <RadarChart width={500} height={300} data={champions.stats} outerRadius={120}>
           <PolarGrid stroke="#ecc94b"/>
           <PolarAngleAxis dataKey="field" tick={{fontSize: '10px', fontWeight: 'bold'}} />
@@ -173,7 +173,6 @@ export default function Home() {
           
         </RadarChart>
           </ResponsiveContainer> 
-          <ChartHeading champions>Sports Festival Champions</ChartHeading>
         </ChartWrapper>
         <ChampionDesc><h1>The UA sports festival</h1>
         <h2>Winners</h2>

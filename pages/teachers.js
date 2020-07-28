@@ -18,13 +18,13 @@ const data = [
 ];
 
 const StyledChartWrapper = styled(ChartWrapper) `
-  ${tw`shadow-2xl sm:w-4/5 border-yellow-400 border-4`}
+  ${tw`shadow-2xl sm:w-4/5 border-gray-400 border-4`}
 
 
 
 `
 const StyledChartHeading = styled(ChartHeading) `
- ${tw `bg-yellow-400 text-yellow-700`}
+ ${tw `bg-gray-400 text-gray-700`}
 `
 
 export default function Home() {
@@ -46,11 +46,11 @@ export default function Home() {
             <YAxis domain={[0, 10]}/>
             <Tooltip />
             <Legend wrapperStyle={{top: 50, fontWeight: 'bold', fontSize: 12}}/>
-            <Bar dataKey="leadership" fill="#744210" />
-            <Bar dataKey="cooperation" fill="#b7791f" />
-            <Bar dataKey="wit" fill="#ecc94b"/>
-            <Bar dataKey="responsibility" fill="#ed8936"/>
-            <Bar dataKey="combat"  fill="#c05621"/>
+            <Bar dataKey="leadership" fill="#1a202c" />
+            <Bar dataKey="cooperation" fill="#4a5568" />
+            <Bar dataKey="wit" fill="#a0aec0"/>
+            <Bar dataKey="responsibility" fill="#000"/>
+            <Bar dataKey="combat"  fill="#cbd5e0"/>
           </BarChart>
           
           </ResponsiveContainer>
