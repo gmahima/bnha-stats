@@ -12,6 +12,12 @@ import {ChartWrapper, ChartHeading, Content,  Heading} from '../components/commo
 const Stats = styled.div`
 ${tw ` flex flex-col sm:flex-row flex-wrap justify-center`}
 `
+const SRadarChart = styled(RadarChart).attrs((props) => {
+  console.log(props.width)
+  if(props.width<600) {
+    return {outerRadius: 70}
+  }
+})``
 const ChampionDiv = styled.div`${tw`flex flex-col sm:flex-row justify-center sm:py-4 shadow-2xl sm:w-4/5 self-center bg-gray-900 sm:border-8 sm:border-gray-900`}`
 const ChampionDesc = styled.div`${tw` sm:self-center sm:m-8  p-8 pb-6 sm:p-4  sm:w-2/5 text-gray-500`}
 h1 {
@@ -162,7 +168,7 @@ export default function Home() {
         <ChampionDiv>
         <ChartWrapper champions>
           <ResponsiveContainer  width="100%" height={400} wrapperStyle={{left:4, right:4}}>
-          <RadarChart width={500} height={300} data={champions.stats} outerRadius={120}>
+          <SRadarChart width={500} height={300} data={champions.stats} outerRadius={120}>
           <PolarGrid stroke="#a0aec0"/>
           <PolarAngleAxis dataKey="field" tick={{fontSize: '10px', fontWeight: 'bold'}} />
           <Radar name={'#3 '+championNames[2]} dataKey="third" stroke="#1a202c" fill="#1a202c" fillOpacity={0.6}/>
@@ -171,7 +177,7 @@ export default function Home() {
           <Legend wrapperStyle={{fontSize: '12px', fontWeight:'bold', padding: 5}}/>
           <Tooltip wrapperStyle={{fontSize: '3px', fontWeight: 'bold',height:20, opacity:0.9}}/>
           
-        </RadarChart>
+        </SRadarChart>
           </ResponsiveContainer> 
         </ChartWrapper>
         <ChampionDesc><h1>The UA sports festival</h1>
