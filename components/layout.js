@@ -8,7 +8,7 @@ ${tw`
 `}
 `
 const Title = styled.a`
-${tw`font-semibold sm:text-xl  flex items-center sm:px-4 cursor-pointer sm:mx-16 text-gray-700 `}
+${tw`ml-2 font-semibold sm:text-xl  flex items-center sm:px-4 cursor-pointer sm:mx-16 text-gray-700 `}
 `
 const A = styled.a`
 ${tw`capitalize text-sm font-thin flex items-center cursor-pointer  border-gray-600 border-l-2 py-2 px-2 self-center hover:bg-gray-300 text-gray-700`}

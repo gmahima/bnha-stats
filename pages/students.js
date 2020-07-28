@@ -12,22 +12,22 @@ import {ChartWrapper, ChartHeading, Content,  Heading} from '../components/commo
 const Stats = styled.div`
 ${tw ` flex flex-col sm:flex-row flex-wrap justify-center`}
 `
-const ChampionDiv = styled.div`${tw`flex flex-col sm:flex-row justify-center border py-4 bg-yellow-400 shadow-2xl sm:w-4/5 self-center border border-yellow-500 border-8 bg-gray-900 border-8 border-gray-700`}`
-const ChampionDesc = styled.div`${tw`bg-yellow-400 self-center m-8 rounded-lg p-4  text-yellow-600 bg-gray-900 w-2/5 text-gray-500`}
+const ChampionDiv = styled.div`${tw`flex flex-col sm:flex-row justify-center sm:py-4 shadow-2xl sm:w-4/5 self-center bg-gray-900 sm:border-8 sm:border-gray-900`}`
+const ChampionDesc = styled.div`${tw` sm:self-center sm:m-8  p-8 pb-6 sm:p-4  sm:w-2/5 text-gray-500`}
 h1 {
-  ${tw `text-yellow-700 text-3xl font-bold text-gray-300`}
+  ${tw `text-xl font-bold sm:text-3xl sm:font-bold text-gray-300`}
 }
 h2 {
-  ${tw `text-yellow-700 font-semibold text-lg text-gray-400 mt-1`}
+  ${tw `text-lg font-semibold sm:font-semibold sm:text-lg text-gray-400 sm:mt-1`}
 }
 p {
-  ${tw `text-sm`}
+  ${tw `text-xs sm:text-sm`}
 }
 div {
   ${tw `mb-4 flex flex-wrap sm:flex-row flex-col`}
 }
 span {
-  ${tw `rounded bg-yellow-700 text-yellow-200 p-1 mr-2 shadow-sm text-xs mb-2 sm:mb-0 bg-gray-300 text-gray-700` }
+  ${tw `rounded  p-1 mr-2 shadow-sm text-xs mb-2 sm:mb-0 bg-gray-300 text-gray-700` }
 }
 `
 const HR = styled.hr`
